@@ -8,28 +8,32 @@ var consonants = ["b", "B", "c", "C", "d", "D", "f", "F", "g", "G", "h", "H", "j
 // if loop meets criteria it concatenates "way" onto the back
 
 function wordSplitter(str) {
-  str = str.split(" ");
-  for(var index = 0; index < str.length; index ++) {
-    if (str.split(" "));
-    //alert(str.join());
-    return;
-  };
+  //str[index] = userPigLatin[index];
+
+  //alert(str); // [word,word1,word2
+  return str;
+  // for(var index = 0; index < str.length; index ++) {
+  //   if (str.split(""));
+  //   //alert(str.join());
+  //   return ;
+  // };
 };
 
 function userPigLatin(str) {
-  for(var index = 0; index < vowels.length; index ++) {
-    if (str.charAt(0) === vowels[index]) {
-      str = str.concat("way");
-      alert(str);
-      return;
-    } else if (str.slice(0,2) === "qu" || str.slice(0,2) === "Qu") {
-       var x = str.slice(0,2);
-       str = str.slice(2).concat(x);
-       alert(str);
-       return;
-     };
+  str = str.split(" ");
+  for(var j = 0; j < str.length; j++){
+    for(var index = 0; index < vowels.length; index ++) {
+      if (str[j].charAt(0) === vowels[index]) {
+        str[j] = str[j].concat("way");
+        // alert(str[j]);
+      } else if (str[j].slice(0,2) === "qu" || str[j].slice(0,2) === "Qu") {
+         var x = str[j].slice(0,2);
+         str[j] = str[j].slice(2).concat(x);
+        //  alert(str);
+       };
+    };
   };
-
+  return str.join(" ");
 };
 
 
